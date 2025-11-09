@@ -15,6 +15,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 - Exported a clean Modrinth bundle to `dist/Olympus-1.0.0.mrpack` for launcher imports.
 - Added `scripts/publish-packwiz.ps1` automation to refresh, export, and stage HTTP-ready metadata under `deploy/packwiz`.
 - Staged `deploy/packwiz/` with the manifest plus a simple landing page and direct `.mrpack` download button hosted at `https://mc.chroma-scales.com/`.
+- Added scripts/check-updates.ps1 to automate nightly packwiz update -a runs and produce compatibility reports for newer Minecraft/Fabric targets without dirtying the repo.
 - Updated `README.md` and `SERVER_INFO.txt` with Packwiz CLI bootstrap instructions tied to the future domain.
 
 ## Mods Tracked In Packwiz (keep installed)
@@ -87,3 +88,17 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 
 
 
+
+
+## Automated Update Checks and 1.20.4 Readiness
+- Run pwsh ./scripts/check-updates.ps1 to refresh the manifest, attempt packwiz update -a, and generate a markdown report under eports/ (ignored by Git). Use -ApplyUpdates if you want to keep the changes it makes.
+- Latest report (eports/update-report-20251109-155301.md) shows Fabric API wants to move to 0.92.6+1.20.1 and confirms hashes for every file before reverting them.
+- Modrinth scan of our .pw.toml metadata indicates these mods lack 1.20.4 Fabric builds: Create Fabric, Create: Steam 'n' Rails, Farmer's Delight (Fabric fork), Immersive Aircraft, and When Dungeons Arise. Everything else already advertises 1.20.4-compatible releases.
+- Mods without Modrinth metadata (Architectury/Framework/FTB stack/Goblin Traders via CurseForge) need manual checks on CurseForge before we can push Minecraft/Fabric upgrades.
+
+## Minecraft/Fabric Upgrade Plan (keep existing world)
+1. **Lock a pre-upgrade backup** – snapshot the full server (world/, config/, mods/, pack/) plus a copy of the current .mrpack. Store it outside the repo.
+2. **Verify mod availability** – run pwsh ./scripts/check-updates.ps1 -TargetMinecraftVersion 1.20.4 and manually confirm CurseForge-only mods (Architectury, Framework, FTB Library/Teams/Chunks, Goblin Traders). Do not upgrade until every gameplay mod has a stable 1.20.4 build.
+3. **Bump Fabric + loader** – once dependencies exist, update abric-server-launch.jar, Fabric installer, and the pack.toml [versions] block. Re-run packwiz update -a -y to pull the newer mod jars and regenerate index.toml.
+4. **Stage a test environment** – bring up a clone of the server with the upgraded pack and import a copy of the production world. Run Chunky/stress tests, visit Create factories, rail networks, and Distant Horizons areas to confirm data loads.
+5. **Cutover** – when satisfied, stop the production server, drop in the upgraded pack, keep world/ untouched, and restart. Keep the previous build zipped so you can roll back instantly if players report crashes.

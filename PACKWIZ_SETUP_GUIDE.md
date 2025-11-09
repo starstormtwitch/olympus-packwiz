@@ -79,6 +79,14 @@ If you have custom mods (like Avila):
 3. Or they can import it manually
 
 ## Automated Export & Hosting
+## Automated Update Audits
+
+Run pwsh ./scripts/check-updates.ps1 from the repo root to:
+1. packwiz refresh --build
+2. Attempt packwiz update -a and capture any diffs (reverting them unless you pass -ApplyUpdates)
+3. Query Modrinth for Fabric  builds (defaults to 1.20.4) and write a markdown report under eports/
+
+Use this before releasing upgrades or changing Minecraft/Fabric versions so you know which mods are missing compatible builds.
 
 Run `pwsh ./scripts/publish-packwiz.ps1 -Version 1.0.0` from the server root to refresh the manifest, export the .mrpack, and stage HTTP-hostable metadata under `deploy/packwiz/`.
 
@@ -207,6 +215,7 @@ These mods are listed in `server-only-mods.txt` for reference.
 **Good luck setting up your mod pack!** 🚀
 
 If you encounter any issues, refer to the troubleshooting section or check the Packwiz documentation.
+
 
 
 
