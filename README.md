@@ -69,6 +69,15 @@ If you prefer to install manually:
 - **Mod Loader**: Fabric
 - **Server IP**: mc.chroma-scales.com
 - **Server Port**: 25565
+## Dynamic DNS (mc.chroma-scales.com)
+1. Create a Cloudflare API token with Zone.DNS Edit for chroma-scales.com.
+2. Copy config-samples/cloudflare-ddns.sample.json to config/cloudflare-ddns.json (the config/ folder stays local) and fill in:
+   - zone_id from Cloudflare Overview
+   - ecord_name = mc.chroma-scales.com
+   - leave ecord_id blank the first time so the script looks it up
+   - pi_token = token above, proxied should be alse so Minecraft bypasses Cloudflare
+3. Run pwsh ./scripts/update-cloudflare-dns.ps1. It fetches your current public IP and updates the A record if it changed.
+4. (Optional) use Windows Task Scheduler to run the script hourly so DNS follows any ISP IP changes.
 
 ## 🔧 Mods Included
 
@@ -185,6 +194,9 @@ To update the mod pack:
 ---
 
 **Enjoy playing on the Olympus Server!** 🎮
+
+
+
 
 
 
