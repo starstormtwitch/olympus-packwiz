@@ -29,7 +29,7 @@ Welcome to the Olympus Minecraft Server mod pack!
    - Click "Multiplayer" in the Minecraft main menu
    - Click "Add Server"
    - Enter server name: `Olympus`
-   - Enter server address: `play.<domain>` (see SERVER_INFO.txt)
+   - Enter server address: `mc.chroma-scales.com` (see SERVER_INFO.txt)
    - Click "Done" and then click on the server to join!
 
 ### Using Packwiz Installer (CLI-friendly)
@@ -37,9 +37,9 @@ Welcome to the Olympus Minecraft Server mod pack!
 1. Download `packwiz-installer-bootstrap.exe` from https://github.com/packwiz/packwiz-installer-bootstrap/releases.
 2. Open a terminal in your Minecraft instance folder and run:
    ```powershell
-   ./packwiz-installer-bootstrap.exe https://play.<domain>/packwiz/olympus.pw.toml
+   ./packwiz-installer-bootstrap.exe https://mc.chroma-scales.com/packwiz/olympus.pw.toml
    ```
-   (replace `play.<domain>` with the live hostname once DNS is finalized).
+   (use this command to keep clients in sync).
 3. When prompted, accept the default options so Packwiz downloads the Olympus manifest and every referenced mod.
 4. Launch the generated profile in your launcher; updates are as simple as re-running the same bootstrap command.
 
@@ -67,7 +67,7 @@ If you prefer to install manually:
 - **Server Name**: Olympus
 - **Minecraft Version**: 1.20.1
 - **Mod Loader**: Fabric
-- **Server IP**: See SERVER_INFO.txt (update required)
+- **Server IP**: mc.chroma-scales.com
 - **Server Port**: 25565
 
 ## 🔧 Mods Included
@@ -185,6 +185,8 @@ To update the mod pack:
 ---
 
 **Enjoy playing on the Olympus Server!** 🎮
+
+
 
 
 
