@@ -37,7 +37,7 @@ Welcome to the Olympus Minecraft Server mod pack!
 1. Download `packwiz-installer-bootstrap.exe` from https://github.com/packwiz/packwiz-installer-bootstrap/releases.
 2. Open a terminal in your Minecraft instance folder and run:
    ```powershell
-   ./packwiz-installer-bootstrap.exe https://mc.chroma-scales.com/packwiz/olympus.pw.toml
+   ./packwiz-installer-bootstrap.exe https://mods.chroma-scales.com/packwiz/olympus.pw.toml
    ```
    (use this command to keep clients in sync).
 3. When prompted, accept the default options so Packwiz downloads the Olympus manifest and every referenced mod.
