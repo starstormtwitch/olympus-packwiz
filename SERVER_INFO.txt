@@ -3,7 +3,7 @@ Olympus Server Connection Information
 ========================================
 
 Server Name: Olympus
-Server IP: play.<domain> (update with final hostname/IP)
+Server IP: mc.chroma-scales.com
 Server Port: 25565
 Minecraft Version: 1.20.1
 Mod Loader: Fabric
@@ -21,9 +21,9 @@ Method 1: Using Modrinth App (Recommended)
 5. Click "Multiplayer"
 6. Click "Add Server"
 7. Enter server name: Olympus
-8. Enter server address: play.<domain>:25565
+8. Enter server address: mc.chroma-scales.com:25565
 9. Click "Done" and join the server!
-10. Prefer CLI? Run packwiz-installer-bootstrap.exe https://play.<domain>/packwiz/olympus.pw.toml from your instance folder to auto-sync mods.
+10. Prefer CLI? Run packwiz-installer-bootstrap.exe https://mc.chroma-scales.com/packwiz/pack.toml from your instance folder to auto-sync mods.
 
 Method 2: Manual Installation
 ------------------------------
@@ -82,5 +82,6 @@ Important Notes:
 - Do not add or remove mods unless instructed by server admins
 
 ========================================
+
 
 

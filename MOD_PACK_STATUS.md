@@ -14,7 +14,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 - Re-ran `packwiz refresh` to regenerate `index.toml` and update the pack hash (current hash `420a225b0495585350a2256b3ce2362a32080a9d84678da0e57faa6ad025a641`).
 - Exported a clean Modrinth bundle to `dist/Olympus-1.0.0.mrpack` for launcher imports.
 - Added `scripts/publish-packwiz.ps1` automation to refresh, export, and stage HTTP-ready metadata under `deploy/packwiz`.
-- Staged `deploy/packwiz/pack.toml` + `.pw.toml` tree that can be served at `https://play.<domain>/packwiz/pack.toml` for Packwiz bootstrap installs.
+- Staged `deploy/packwiz/pack.toml` + `.pw.toml` tree that can be served at `https://mc.chroma-scales.com/packwiz/pack.toml` for Packwiz bootstrap installs.
 - Updated `README.md` and `SERVER_INFO.txt` with Packwiz CLI bootstrap instructions tied to the future domain.
 
 ## Mods Tracked In Packwiz (keep installed)
@@ -57,7 +57,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 3. **Domain + delivery**
    - Finalize the hostname (e.g., `play.example.com`) and update DNS (A + optional SRV).
    - Host Packwiz manifests behind HTTPS (Caddy on the server, GitHub Pages, or Cloudflare R2);
-     publish the bootstrap URL `https://<domain>/packwiz/olympus.pw.toml` once stable.
+     publish the bootstrap URL `https://mc.chroma-scales.com/packwiz/pack.toml` once stable.
    - Update player docs and any server MOTD to reference the domain only.
 4. **Automation & backups**
    - Script nightly `packwiz refresh`, `packwiz modrinth export`, and copy the export to the web root.
@@ -65,13 +65,13 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
    - Once everything is validated, tag the repository/snapshot as `packwiz-v1` for rollback safety.
 
 ## Player Onboarding Checklist
-- Share the Packwiz installer command (e.g., `packwiz installer bootstrap https://<domain>/packwiz/olympus.pw.toml`).
+- Share the Packwiz installer command (e.g., `packwiz installer bootstrap https://mc.chroma-scales.com/packwiz/pack.toml`).
 - Include simple instructions for Prism & MultiMC imports plus JVM tuning tips (Distant Horizons needs >=6G RAM).
 - Document how to join FTB Teams and claim chunks on first login.
 - Provide a troubleshooting FAQ (shader conflicts, Steam Rails lag settings, DH LoD tips) linked from the Modrinth page.
 
 ## Domain Cutover (reminder)
-1. Point `play.<domain>` A record to the server IP (short TTL while testing).
+1. Point `mc.chroma-scales.com` A record to the server IP (short TTL while testing).
 2. Optional: `_minecraft._tcp.play` SRV to hide non-standard ports.
 3. Keep `server-ip` blank inside `server.properties`; verify `online-mode=true` stays enabled.
 4. Once DNS propagates and the new installer references the domain, stop publishing the raw IP anywhere.
@@ -81,6 +81,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 - Whether optional QoL mods (Leaves Be Gone, Inventory Sorting) should be enabled by default or documented as toggles.
 - Preferred CDN/hosting target for the Packwiz output (Caddy on the game host vs GitHub Pages vs Cloudflare R2).
 - Timeline for publishing the Modrinth project page (needs screenshots, description, license confirmation).
+
 
 
 
