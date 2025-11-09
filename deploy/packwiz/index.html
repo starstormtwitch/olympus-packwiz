@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Modpack</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0f0f15; color: #f4f4f4; margin: 0; padding: 0; }
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #4f46e5, #9333ea); }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p { margin: 5px 0; }
+        .content { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .card { background: #181827; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+        .card h2 { margin-top: 0; }
+        code, pre { background: #27273d; color: #f9fafb; padding: 8px 10px; border-radius: 6px; display: inline-block; }
+        .cta { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #14b8a6; color: #0f172a; text-decoration: none; font-weight: 600; border-radius: 9999px; }
+        .cta:hover { background: #0d9488; }
+        ul { padding-left: 20px; }
+        footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Olympus Modpack</h1>
+        <p>Fabric 1.20.1 • Create ? Steam Rails ? FTB Teams ? Distant Horizons</p>
+        <a class="cta" href="/packwiz/pack.toml">Download Manifest</a>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <h2>Quick Install via Packwiz</h2>
+            <p>Open your Minecraft instance folder (Prism, MultiMC, etc.) and run:</p>
+            <pre>./packwiz-installer-bootstrap.exe https://mc.chroma-scales.com/packwiz/pack.toml</pre>
+            <p>This keeps your client in sync with the server automatically.</p>
+        </div>
+
+        <div class="card">
+            <h2>Modrinth / GUI Import</h2>
+            <p>Prefer a GUI? Import the latest <code>Olympus-1.0.0.mrpack</code> into the Modrinth app or Prism launcher.</p>
+            <ul>
+                <li>Launcher ? <em>Import Instance</em></li>
+                <li>Point to the <code>.mrpack</code> from the repo’s <code>dist/</code> folder</li>
+                <li>Launch, then join <code>mc.chroma-scales.com</code></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Need Help?</h2>
+            <ul>
+                <li>Ensure Fabric 1.20.1 and Java 17+</li>
+                <li>Allocate 6-8 GB RAM (Distant Horizons + Create)</li>
+                <li>Questions? Ping the Olympus Discord mods</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        Olympus SMP · Powered by Packwiz + Cloudflare Pages
+    </footer>
+</body>
+</html>
