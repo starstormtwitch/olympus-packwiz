@@ -1,0 +1,54 @@
+# Minecraft runtime data
+world/
+world_nether/
+world_the_end/
+DIM*/*
+Olympus/
+logs/
+crash-reports/
+buckets/
+backups/
+config/
+defaultconfigs/
+local/
+libraries/
+versions/
+resourcepacks/
+.forge*/
+.fabric/
+
+# Packwiz build artifacts
+mods/**/*.jar
+mods/**/*.zip
+dist/
+*.mrpack
+
+# Executables / installers
+*.exe
+*.bat.bak
+fabric-installer-*.jar
+fabric-installer-*.exe
+packwiz.exe
+packwiz-linux-amd64
+
+# Server infrastructure
+server.jar
+*.log
+*.tmp
+*.dat_old
+
+# Misc
+.DS_Store
+Thumbs.db
+*.jar
+ops.json
+usercache.json
+usernamecache.json
+whitelist.json
+banned-players.json
+banned-ips.json
+server.properties
+server.properties.bak
+eula.txt
+eula.txt.bak
+

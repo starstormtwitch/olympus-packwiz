@@ -1,0 +1,24 @@
+# Packwiz Mod Pack Configuration Template
+# This file will be automatically created by Packwiz when you run setup-packwiz.bat
+# This is just a reference template showing what the file will contain
+
+# After running setup-packwiz.bat, you can customize this file if needed.
+# The actual pack.toml will be created by Packwiz with the correct structure.
+
+# Example structure (created by Packwiz):
+# name = "Olympus Server"
+# pack-format = "packwiz:1.1.0"
+# version = "1.0.0"
+# author = "StarStorm"
+# 
+# [versions]
+# minecraft = "1.20.1"
+# fabric = "0.92.5+1.20.1"
+# 
+# [index]
+# file = "index.toml"
+# hash-format = "sha256"
+# hash = ""
+
+# Note: Do not manually create pack.toml - let Packwiz create it automatically!
+

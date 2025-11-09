@@ -1,0 +1,86 @@
+========================================
+Olympus Server Connection Information
+========================================
+
+Server Name: Olympus
+Server IP: play.<domain> (update with final hostname/IP)
+Server Port: 25565
+Minecraft Version: 1.20.1
+Mod Loader: Fabric
+
+========================================
+How to Connect:
+========================================
+
+Method 1: Using Modrinth App (Recommended)
+-------------------------------------------
+1. Install Modrinth App from https://modrinth.com/app
+2. Import the Olympus-Server.mrpack file
+3. Click "Install" and wait for mods to download
+4. Launch Minecraft with the mod pack
+5. Click "Multiplayer"
+6. Click "Add Server"
+7. Enter server name: Olympus
+8. Enter server address: play.<domain>:25565
+9. Click "Done" and join the server!
+10. Prefer CLI? Run packwiz-installer-bootstrap.exe https://play.<domain>/packwiz/olympus.pw.toml from your instance folder to auto-sync mods.
+
+Method 2: Manual Installation
+------------------------------
+1. Download and install Fabric Loader 1.20.1
+2. Download all mods from the mod pack
+3. Place mods in your .minecraft/mods folder
+4. Launch Minecraft with Fabric
+5. Add the server using the IP above
+6. Join the server!
+
+========================================
+Server Features:
+========================================
+
+- Custom biome generation from PNG files
+- Create mod for advanced building and automation
+- FTB Chunks for land claiming and protection
+- FTB Teams for collaborative gameplay
+- Farmers Delight for enhanced cooking
+- Immersive Aircraft for flying
+- And much more!
+
+========================================
+Troubleshooting:
+========================================
+
+If you can't connect:
+- Make sure you have the correct mod pack installed
+- Check that your Minecraft version is 1.20.1
+- Verify that Fabric Loader is installed correctly
+- Ensure all mods are loaded (check the mods menu)
+- Check your firewall settings
+- Verify the server IP and port are correct
+
+If mods are missing:
+- Reinstall the mod pack using Modrinth App
+- Make sure you downloaded the latest version
+- Check that all mods are enabled in the mods menu
+
+========================================
+Support:
+========================================
+
+For help or questions, contact: [YOUR CONTACT INFO - UPDATE THIS]
+
+Server Website: [YOUR WEBSITE - IF APPLICABLE]
+Discord: [YOUR DISCORD - IF APPLICABLE]
+
+========================================
+Important Notes:
+========================================
+
+- This server uses custom biome generation
+- Some mods may be server-side only and not required for clients
+- Make sure to use the exact mod versions specified in the mod pack
+- Do not add or remove mods unless instructed by server admins
+
+========================================
+
+

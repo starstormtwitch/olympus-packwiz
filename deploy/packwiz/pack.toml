@@ -1,0 +1,13 @@
+name = "Olympus Server"
+author = "StarStorm"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "1066a934422049298c5c4f44f94de241a5a4ecaf5eea5c1c471675bd122a3c45"
+
+[versions]
+fabric = "0.18.0"
+minecraft = "1.20.1"
