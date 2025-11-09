@@ -14,7 +14,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 - Re-ran `packwiz refresh` to regenerate `index.toml` and update the pack hash (current hash `420a225b0495585350a2256b3ce2362a32080a9d84678da0e57faa6ad025a641`).
 - Exported a clean Modrinth bundle to `dist/Olympus-1.0.0.mrpack` for launcher imports.
 - Added `scripts/publish-packwiz.ps1` automation to refresh, export, and stage HTTP-ready metadata under `deploy/packwiz`.
-- Staged `deploy/packwiz/pack.toml` + `.pw.toml` tree that can be served at `https://mc.chroma-scales.com/packwiz/pack.toml` for Packwiz bootstrap installs.
+- Staged `deploy/packwiz/` with the manifest plus a simple landing page and direct `.mrpack` download button hosted at `https://mc.chroma-scales.com/`.
 - Updated `README.md` and `SERVER_INFO.txt` with Packwiz CLI bootstrap instructions tied to the future domain.
 
 ## Mods Tracked In Packwiz (keep installed)
@@ -56,8 +56,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
    - Smoke-test Create + Steam Rails, Distant Horizons, and Dungeons Arise generation in a throwaway singleplayer copy before touching the main world.
 3. **Domain + delivery**
    - Finalize the hostname (e.g., `play.example.com`) and update DNS (A + optional SRV).
-   - Host Packwiz manifests behind HTTPS (Caddy on the server, GitHub Pages, or Cloudflare R2);
-     publish the bootstrap URL `https://mc.chroma-scales.com/packwiz/pack.toml` once stable.
+   - Host Packwiz manifests behind HTTPS (Cloudflare Pages now live).\n     Publish the bootstrap URL https://mc.chroma-scales.com/packwiz/pack.toml and attach the freshly exported dist/Olympus-1.0.0.mrpack to a GitHub release so the landing-page download works.
    - Update player docs and any server MOTD to reference the domain only.
 4. **Automation & backups**
    - Script nightly `packwiz refresh`, `packwiz modrinth export`, and copy the export to the web root.
@@ -81,6 +80,7 @@ We are migrating the previously manual Fabric server into a Packwiz-managed clie
 - Whether optional QoL mods (Leaves Be Gone, Inventory Sorting) should be enabled by default or documented as toggles.
 - Preferred CDN/hosting target for the Packwiz output (Caddy on the game host vs GitHub Pages vs Cloudflare R2).
 - Timeline for publishing the Modrinth project page (needs screenshots, description, license confirmation).
+
 
 
 
