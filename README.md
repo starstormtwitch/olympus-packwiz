@@ -1,207 +1,99 @@
 # Olympus Server Mod Pack
 
-Welcome to the Olympus Minecraft Server mod pack!
+Welcome to the Olympus Fabric 1.20.1 modpack that powers the mc.chroma-scales.com SMP. Pick the launcher you like, follow the matching steps below, and join the server in minutes.
 
-## 📦 Installation
+## Installation Checklist
+- Java 17 or newer
+- 6�8 GB RAM allocated in your launcher (Distant Horizons + Create need it)
+- Server address: **mc.chroma-scales.com** (default port 25565)
+- Modpack download (.mrpack): https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack
 
-### Using Modrinth App (Recommended - Easiest Method)
+### Modrinth App (easiest)
+1. Open the Modrinth App ? **Add Instance ? Import from file**.
+2. Pick the downloaded `Olympus-1.0.0.mrpack`.
+3. After it finishes installing, press Play and join `mc.chroma-scales.com`.
 
-1. **Download Modrinth App**
-   - Visit [https://modrinth.com/app](https://modrinth.com/app)
-   - Download and install the Modrinth App for your operating system
-
-2. **Import the Mod Pack**
-   - Open Modrinth App
-   - Click "Import" or "Create Instance"
-   - Select the `Olympus-Server.mrpack` file
-   - Click "Import" and wait for the mod pack to be processed
-
-3. **Install the Mod Pack**
-   - Click "Install" on the imported mod pack
-   - Wait for all mods to download and install
-   - This may take a few minutes depending on your internet connection
-
-4. **Launch Minecraft**
-   - Click "Play" or "Launch" in Modrinth App
-   - Minecraft will launch with all the required mods installed
-
-5. **Connect to the Server**
-   - Click "Multiplayer" in the Minecraft main menu
-   - Click "Add Server"
-   - Enter server name: `Olympus`
-   - Enter server address: `mc.chroma-scales.com` (see SERVER_INFO.txt)
-   - Click "Done" and then click on the server to join!
-
-### Using Packwiz Installer (CLI-friendly)
-
-1. Download `packwiz-installer-bootstrap.exe` from https://github.com/packwiz/packwiz-installer-bootstrap/releases.
-2. Open a terminal in your Minecraft instance folder and run:
+### Prism Launcher
+1. Create a new Vanilla 1.20.1 instance and launch it once (this creates the `.minecraft` folder).
+2. Right-click the instance ? **Folder ? Open .minecraft** and drop `packwiz-installer-bootstrap.jar` into it.
+3. In that folder, run:
    ```powershell
-   ./packwiz-installer-bootstrap.exe https://mods.chroma-scales.com/packwiz/olympus.pw.toml
+   java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml
    ```
-   (use this command to keep clients in sync).
-3. When prompted, accept the default options so Packwiz downloads the Olympus manifest and every referenced mod.
-4. Launch the generated profile in your launcher; updates are as simple as re-running the same bootstrap command.
+4. Launch the instance from Prism and join the server.
 
-### Manual Installation (Advanced)
+### MultiMC / PolyMC
+1. **Add Instance ? Import from Zip** and choose `Olympus-1.0.0.mrpack`.
+2. Alternatively, open the instance folder and run the same Packwiz bootstrap command shown above.
+3. Launch and join `mc.chroma-scales.com`.
 
-If you prefer to install manually:
+### CurseForge App
+1. Click the **Browse Modpacks ? Create Custom Profile ? Import** button.
+2. Select `Olympus-1.0.0.mrpack`.
+3. Start the imported profile and connect to the server.
 
-1. **Install Fabric Loader**
-   - Download Fabric Installer from [https://fabricmc.net/use/installer/](https://fabricmc.net/use/installer/)
-   - Install Fabric Loader for Minecraft 1.20.1
+### Packwiz CLI (advanced / power users)
+```powershell
+./packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml
+```
+This keeps the instance in sync automatically when we update the manifest.
 
-2. **Download Mods**
-   - Extract the mod pack or download mods individually
-   - Place all mod `.jar` files in your `.minecraft/mods` folder
+## Server Information
+- **Server Name:** Olympus
+- **Minecraft Version:** 1.20.1
+- **Mod Loader:** Fabric
+- **Server IP:** mc.chroma-scales.com
+- **Port:** 25565
 
-3. **Launch Minecraft**
-   - Select the Fabric 1.20.1 profile
-   - Launch Minecraft and verify all mods are loaded
-
-4. **Connect to Server**
-   - Follow the connection instructions in SERVER_INFO.txt
-
-## 🎮 Server Information
-
-- **Server Name**: Olympus
-- **Minecraft Version**: 1.20.1
-- **Mod Loader**: Fabric
-- **Server IP**: mc.chroma-scales.com
-- **Server Port**: 25565
 ## Dynamic DNS (mc.chroma-scales.com)
-1. Create a Cloudflare API token with Zone.DNS Edit for chroma-scales.com.
-2. Copy config-samples/cloudflare-ddns.sample.json to config/cloudflare-ddns.json (the config/ folder stays local) and fill in:
-   - zone_id from Cloudflare Overview
-   - ecord_name = mc.chroma-scales.com
-   - leave ecord_id blank the first time so the script looks it up
-   - pi_token = token above, proxied should be alse so Minecraft bypasses Cloudflare
-3. Run pwsh ./scripts/update-cloudflare-dns.ps1. It fetches your current public IP and updates the A record if it changed.
-4. (Optional) use Windows Task Scheduler to run the script hourly so DNS follows any ISP IP changes.
+1. Create a Cloudflare API token with **Zone.DNS Edit** for `chroma-scales.com`.
+2. Copy `config-samples/cloudflare-ddns.sample.json` to `config/cloudflare-ddns.json` (the `config/` folder is git-ignored) and fill in your `zone_id`, `record_name` (`mc.chroma-scales.com`), and API token. Leave `record_id` blank the first run.
+3. Run `pwsh ./scripts/update-cloudflare-dns.ps1`; it fetches your current public IP and updates the A record only when necessary.
+4. Optional: schedule the script hourly in Windows Task Scheduler so the record stays in sync with your ISP.
 
-## 🔧 Mods Included
+## Mods Included
+### Core
+- Fabric API
+- Fabric Language Kotlin
 
-This mod pack includes all necessary client-side mods to connect to the Olympus server:
+### Gameplay / World
+- Create Fabric + Steam 'n' Rails
+- FTB Library / Teams / Chunks
+- Farmer's Delight (Fabric fork)
+- Immersive Aircraft
+- Polymorph
+- Dungeons Arise
+- Structory + Structory Towers
+- Steam Rails
+- Goblin Traders
+- Universal Shops
 
-### Core Mods
-- **Fabric API** - Required base mod for Fabric
-- **Fabric Language Kotlin** - Kotlin support for mods
+### Client Quality of Life
+- JEI (Just Enough Items)
+- AppleSkin
+- Clumps
+- Inventory Sorter
+- Mod Menu
+- Sodium + Indium
+- Distant Horizons
+- Leaves Be Gone
 
-### Gameplay Mods
-- **Create** - Advanced building and automation
-- **FTB Chunks** - Land claiming and protection
-- **FTB Teams** - Collaborative gameplay
-- **FTB Library** - Core library for FTB mods
-- **Farmers Delight** - Enhanced cooking and farming
-- **Immersive Aircraft** - Flying vehicles
-- **Polymorph** - Recipe conflict resolution
-- **Dungeons Arise** - Additional structures
-- **Structory** - Enhanced structures
-- **Structory Towers** - Tower structures
-- **Steam Rails** - Advanced rail systems
-- **Goblin Traders** - Trading with goblins
-- **Universal Shops** - Shop system
+### Server-only (already installed on the server, no need for clients)
+- Anti-Xray
+- Atlas
+- Biome Spawn Point
+- FTB Backups
+- Plan
+- Ledger
+- Lithium
+- Krypton
+- Neruina
+- Global Packs
 
-### Client Enhancement Mods
-- **JEI (Just Enough Items)** - Recipe viewing
-- **AppleSkin** - Food and hunger information
-- **Clumps** - XP orb grouping
-- **Inventory Sorter** - Automatic inventory sorting
-- **Mod Menu** - Mod configuration menu
-- **Sodium** - Performance optimization
-- **Indium** - Sodium compatibility
-- **Distant Horizons** - Extended render distance
+## Troubleshooting
+- Make sure Java 17+ is installed and selected by your launcher.
+- Disable shaders on first launch; re-enable once everything is stable.
+- If you get mismatched mods, rerun the Modrinth/Prism import or the Packwiz bootstrap command to resync.
+- Still stuck? Ping the Olympus Discord mods and mention which launcher you used.
 
-### Server-Only Mods (Not Included)
-
-These mods are installed on the server but are NOT required for clients:
-- Anti-Xray (server-side anti-cheat)
-- Atlas (server-side map generation)
-- Biome Spawn Point (server-side spawn management)
-- FTB Backups (server backup tool)
-- Plan (server analytics)
-- Ledger (server logging)
-- Lithium (server performance)
-- Krypton (network optimization)
-- Neruina (exception handling)
-- Global Packs (resource pack management)
-
-## 🚀 Server Features
-
-- **Custom Biome Generation** - Biome generation from PNG files
-- **Land Claiming** - Protect your builds with FTB Chunks
-- **Team System** - Collaborate with friends using FTB Teams
-- **Advanced Building** - Create mod for complex builds
-- **Enhanced Cooking** - Farmers Delight for better food
-- **Flying Vehicles** - Immersive Aircraft for travel
-- **And much more!**
-
-## 📝 Important Notes
-
-1. **Mod Versions**: Make sure to use the exact mod versions specified in this mod pack. Different versions may cause compatibility issues.
-
-2. **Server-Side Mods**: Some mods are server-side only and don't need to be installed on your client. These are automatically excluded from the mod pack.
-
-3. **Custom Mods**: This server uses custom biome generation. Make sure you have all required mods installed.
-
-4. **Updates**: When the server updates mods, you'll need to update your mod pack. Check for updates regularly.
-
-5. **Troubleshooting**: If you encounter issues, see the SERVER_INFO.txt file for troubleshooting tips.
-
-## 🆘 Troubleshooting
-
-### Can't Connect to Server
-
-- Verify you have the correct mod pack installed
-- Check that your Minecraft version is 1.20.1
-- Ensure Fabric Loader is installed correctly
-- Verify all mods are loaded (check mods menu)
-- Check your firewall settings
-- Verify the server IP and port in SERVER_INFO.txt
-
-### Mods Not Loading
-
-- Reinstall the mod pack using Modrinth App
-- Make sure you downloaded the latest version
-- Check that all mods are enabled in the mods menu
-- Verify Fabric Loader is installed for 1.20.1
-
-### Performance Issues
-
-- Make sure Sodium is installed and enabled
-- Reduce render distance if needed
-- Close other applications
-- Update your graphics drivers
-
-## 📞 Support
-
-For help or questions:
-- Check SERVER_INFO.txt for contact information
-- Visit the server website (if available)
-- Join the Discord server (if available)
-
-## 📄 License
-
-This mod pack is for use with the Olympus Minecraft Server. All mods are the property of their respective authors. Please respect their licenses and terms of use.
-
-## 🔄 Updates
-
-To update the mod pack:
-1. Download the latest version
-2. Reinstall using Modrinth App
-3. Or manually update mods in your mods folder
-
----
-
-**Enjoy playing on the Olympus Server!** 🎮
-
-
-
-
-
-
-
-
-
-
-
+Enjoy the Olympus SMP!

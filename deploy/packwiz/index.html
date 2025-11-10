@@ -5,63 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympus Modpack</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #101520; color: #f4f4f4; margin: 0; }
-        header { background: #1e293b; padding: 30px 20px; text-align: center; }
-        header h1 { margin: 0 0 10px 0; font-size: 2.2rem; }
-        header p { margin: 0; font-size: 1.05rem; }
-        main { max-width: 860px; margin: 40px auto; padding: 0 20px 40px 20px; }
-        .card { background: #1a2130; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #222b3c; }
+        body { font-family: Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; }
+        header { background: #1e293b; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0 0 10px 0; font-size: 2.4rem; }
+        main { max-width: 960px; margin: 40px auto; padding: 0 20px 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #1a2135; border: 1px solid #26304a; border-radius: 12px; padding: 20px; }
         h2 { margin-top: 0; }
-        ol, ul { padding-left: 20px; }
-        code { background: #262f45; padding: 4px 6px; border-radius: 4px; display: inline-block; }
-        .button { display: inline-block; padding: 12px 18px; background: #38bdf8; color: #0f172a; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        code { background: #0d1320; padding: 4px 6px; border-radius: 4px; display: inline-block; }
+        .button { display: inline-block; margin-top: 10px; padding: 12px 18px; background: #38bdf8; color: #0f172a; text-decoration: none; border-radius: 6px; font-weight: bold; }
         .button:hover { background: #0ea5e9; }
-        footer { text-align: center; padding: 20px 0 40px 0; color: #94a3b8; font-size: 0.85rem; }
+        footer { text-align: center; padding: 30px 0; color: #94a3b8; font-size: 0.85rem; }
+        ul, ol { padding-left: 18px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Olympus Modpack</h1>
-        <p>Join the Fabric 1.20.1 Olympus server with Create, Steam Rails, FTB Teams, and more.</p>
-    </header>
+<header>
+    <h1>Olympus Modpack</h1>
+    <p>Fabric 1.20.1 · Create · Steam Rails · FTB Teams · Join at <strong>mc.chroma-scales.com</strong></p>
+</header>
 
-    <main>
-        <section class="card">
-            <h2>Fast Option: Auto Installer</h2>
+<main>
+    <section class="card">
+        <h2>Download the Pack</h2>
+        <p>Use the same file in every launcher:</p>
+        <a class="button" href="https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack">Download Olympus-1.0.0.mrpack</a>
+        <p>Advanced users can sync directly via Packwiz:</p>
+        <code>java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml</code>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Modrinth App</h2>
             <ol>
-                <li>Download <a class="button" href="https://github.com/packwiz/packwiz-installer-bootstrap/releases" target="_blank">packwiz-installer-bootstrap.exe</a> and place it in your launcher folder (Prism, MultiMC, GDLauncher, etc.).</li>
-                <li>Open a command prompt inside that folder.</li>
-                <li>Run:<br>
-                    <code>./packwiz-installer-bootstrap.exe https://mods.chroma-scales.com/packwiz/pack.toml</code>
+                <li>In Modrinth App, click <em>Add Instance ? Import from file</em>.</li>
+                <li>Select the downloaded <code>.mrpack</code>.</li>
+                <li>Click Play and join <strong>mc.chroma-scales.com</strong>.</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h2>Prism Launcher</h2>
+            <ol>
+                <li>Create a 1.20.1 instance and launch it once.</li>
+                <li>Right-click ? <em>Folder ? Open .minecraft</em>.</li>
+                <li>Drop <code>packwiz-installer-bootstrap.jar</code> in the folder and run:<br>
+                    <code>java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml</code>
                 </li>
-                <li>Start the new profile the installer creates and connect to <strong>mc.chroma-scales.com</strong>.</li>
+                <li>Launch the instance and connect.</li>
             </ol>
-        </section>
-
-        <section class="card">
-            <h2>Direct Download (.mrpack)</h2>
-            <p>Want a file you can double-click in the Modrinth App or Prism?</p>
-            <p><a class="button" href="https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack">Download Olympus-1.0.0.mrpack</a></p>
+        </div>
+        <div class="card">
+            <h2>MultiMC / PolyMC</h2>
             <ol>
-                <li>Save the file somewhere easy to find.</li>
-                <li>In your launcher choose <em>Import</em> or <em>Add Instance</em> and select the file.</li>
-                <li>Launch the instance and join <strong>mc.chroma-scales.com</strong>.</li>
+                <li><em>Add Instance ? Import from Zip</em> and choose the <code>.mrpack</code> file.</li>
+                <li>Launch; the mods are installed automatically.</li>
+                <li>Join <strong>mc.chroma-scales.com</strong>.</li>
             </ol>
-        </section>
-
-        <section class="card">
+        </div>
+        <div class="card">
+            <h2>CurseForge App</h2>
+            <ol>
+                <li>Click <em>Create Custom Profile ? Import</em>.</li>
+                <li>Select the downloaded <code>.mrpack</code>.</li>
+                <li>Start the new profile and connect.</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h2>Packwiz CLI</h2>
+            <ol>
+                <li>Place <code>packwiz-installer-bootstrap.jar</code> in your instance folder.</li>
+                <li>Run:<br>
+                    <code>java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml</code>
+                </li>
+                <li>Launch the generated profile.</li>
+            </ol>
+        </div>
+        <div class="card">
             <h2>Before You Join</h2>
             <ul>
-                <li>Use Java 17 or newer.</li>
-                <li>Allocate at least 6 GB of RAM (8 GB preferred for Distant Horizons).</li>
-                <li>Keep shaders disabled on first launch; add them later if performance is good.</li>
-                <li>Need help? Ask in the Olympus Discord and mention you followed these steps.</li>
+                <li>Java 17 or newer.</li>
+                <li>Allocate 6–8 GB RAM.</li>
+                <li>Disable shaders on first launch.</li>
+                <li>Need help? Ping the Olympus Discord mods.</li>
             </ul>
-        </section>
-    </main>
+        </div>
+    </div>
+</main>
 
-    <footer>
-        Olympus SMP · Packwiz manifest hosted at mods.chroma-scales.com · mc.chroma-scales.com
-    </footer>
+<footer>
+    Olympus SMP · Packwiz manifest hosted at https://mods.chroma-scales.com/
+</footer>
 </body>
 </html>

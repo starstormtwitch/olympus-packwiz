@@ -12,7 +12,7 @@ Mod Loader: Fabric
 How to Connect:
 ========================================
 
-Method 1: Using Modrinth App (Recommended)
+Method 1: Using Modrinth App (Recommended)\r\nDownload the latest .mrpack: https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack or visit https://mods.chroma-scales.com/ for launcher-specific instructions.
 -------------------------------------------
 1. Install Modrinth App from https://modrinth.com/app
 2. Import the Olympus-Server.mrpack file
@@ -82,6 +82,7 @@ Important Notes:
 - Do not add or remove mods unless instructed by server admins
 
 ========================================
+
 
 
 

@@ -16,7 +16,7 @@ try {
     $config = Get-Content -Raw $ConfigPath | ConvertFrom-Json
 }
 catch {
-    Write-Error "Unable to parse $ConfigPath: $($_.Exception.Message)"
+    Write-Error "Unable to parse ${ConfigPath}: $($_.Exception.Message)"
     exit 1
 }
 

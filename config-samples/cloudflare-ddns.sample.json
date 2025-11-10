@@ -1,8 +1,8 @@
 {
   "zone_id": "<your-zone-id>",
   "record_name": "mc.chroma-scales.com",
-  "record_id": "", 
-  "api_token": "<Cloudflare API token with Zone.DNS Edit>",
+  "record_id": "",
+  "api_token": "<cloudflare-api-token>",
   "proxied": false,
   "ttl": 300
 }
