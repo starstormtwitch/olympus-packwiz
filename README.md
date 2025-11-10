@@ -6,11 +6,13 @@ Welcome to the Olympus Fabric 1.20.1 modpack that powers the mc.chroma-scales.co
 - Java 17 or newer
 - 6–8 GB RAM allocated in your launcher (Distant Horizons + Create need it)
 - Server address: **mc.chroma-scales.com** (default port 25565)
-- Modpack download (.mrpack): https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack
+- Downloads:
+  - Modrinth / Prism / MultiMC (.mrpack): https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0.mrpack
+  - CurseForge import (.zip): https://github.com/starstormtwitch/olympus-packwiz/releases/latest/download/Olympus-1.0.0-curseforge.zip
 
 ### Modrinth App (easiest)
 1. Open the Modrinth App ? **Add Instance ? Import from file**.
-2. Pick the downloaded `Olympus-1.0.0.mrpack`.
+2. Pick the downloaded `.mrpack`.
 3. After it finishes installing, press Play and join `mc.chroma-scales.com`.
 
 ### Prism Launcher
@@ -18,7 +20,7 @@ Welcome to the Olympus Fabric 1.20.1 modpack that powers the mc.chroma-scales.co
 2. Right-click the instance ? **Folder ? Open .minecraft** and drop `packwiz-installer-bootstrap.jar` into it.
 3. In that folder, run:
    ```powershell
-   java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml
+   java -jar packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/pack.toml
    ```
 4. Launch the instance from Prism and join the server.
 
@@ -29,12 +31,12 @@ Welcome to the Olympus Fabric 1.20.1 modpack that powers the mc.chroma-scales.co
 
 ### CurseForge App
 1. Click the **Browse Modpacks ? Create Custom Profile ? Import** button.
-2. Select `Olympus-1.0.0.mrpack`.
+2. Select `Olympus-1.0.0-curseforge.zip`.
 3. Start the imported profile and connect to the server.
 
 ### Packwiz CLI (advanced / power users)
 ```powershell
-./packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/packwiz/pack.toml
+./packwiz-installer-bootstrap.jar https://mods.chroma-scales.com/pack.toml
 ```
 This keeps the instance in sync automatically when we update the manifest.
 
@@ -97,3 +99,6 @@ This keeps the instance in sync automatically when we update the manifest.
 - Still stuck? Ping the Olympus Discord mods and mention which launcher you used.
 
 Enjoy the Olympus SMP!
+
+
+
